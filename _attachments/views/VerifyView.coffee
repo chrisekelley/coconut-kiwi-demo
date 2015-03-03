@@ -232,7 +232,7 @@ VerifyView = Backbone.Marionette.ItemView.extend
           else
             i=1
             interval = setInterval =>
-              if i == 50
+              if i == 5
                 uuid = CoconutUtils.uuidGenerator(30)
                 serviceUuid = CoconutUtils.uuidGenerator(30)
                 console.log("Go to next page. Generated UUID: " + uuid)

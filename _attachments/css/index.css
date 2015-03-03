@@ -155,3 +155,8 @@ body {
 #uploadFailed {
     display: none;
 }
+
+#stats td {
+    padding-top: 0px;
+    padding-right: 5px;
+}

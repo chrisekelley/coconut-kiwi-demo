@@ -78,7 +78,6 @@ var by_AdminDateDesignDoc = createDesignDoc('by_AdminDate', function(doc) {
 });
 
 var by_StatsDesignDoc = createDesignDoc('by_Stats', function(doc) {
-  if (doc.faveColor) {
     if (doc.faveColor == 'blue')  {
       emit('faveColor-blue', 1)
     }
@@ -106,8 +105,44 @@ var by_StatsDesignDoc = createDesignDoc('by_Stats', function(doc) {
     if (doc.faveColor == 'white')  {
       emit('faveColor-white', 1)
     }
-  }
+    if (doc.firstTimeDC == null)  {
+    emit('firstTimeDC-null', 1)
+    }
+    if (doc.firstTimeDC == 'Yes')  {
+      emit('firstTimeDC-yes', 1)
+    }
+    if (doc.firstTimeDC == 'No')  {
+      emit('firstTimeDC-no', 1)
+    }
+    if (doc.numberTimesCIES == '0')  {
+      emit('numberTimesCIES-0', 1)
+    }
+    if (doc.numberTimesCIES == '1')  {
+      emit('numberTimesCIES-1', 1)
+    }
+    if (doc.numberTimesCIES == '2')  {
+      emit('numberTimesCIES-2', 1)
+    }
+    if (doc.numberTimesCIES == '3')  {
+      emit('numberTimesCIES-3', 1)
+    }
+    if (doc.numberTimesCIES == 'more than 3')  {
+      emit('numberTimesCIES-more', 1)
+    }
+    if (doc.coffeeOrTea == 'coffee')  {
+      emit('coffeeOrTea-coffee', 1)
+    }
+    if (doc.coffeeOrTea == 'tea')  {
+      emit('coffeeOrTea-tea', 1)
+    }
+    if (doc.coffeeOrTea == 'both')  {
+      emit('coffeeOrTea-both', 1)
+    }
+    if (doc.coffeeOrTea == 'neither')  {
+      emit('coffeeOrTea-neither', 1)
+    }
 }, '_count');
+//});
 
 //var by_AdminByDateDesignDoc = createDesignDoc('by_AdminByDate', function(doc) {
 //    if (doc.savedBy) {

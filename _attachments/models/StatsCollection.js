@@ -11,12 +11,21 @@ StatsCollection = (function(_super) {
     return _ref;
   }
 
-  StatsCollection.prototype.model = Result;
+  StatsCollection.prototype.model = Stat;
 
   StatsCollection.prototype.url = '/result';
 
   StatsCollection.prototype.parse = function(response) {
-    return response.rows;
+    var keys, processRow, stats, values;
+    keys = [];
+    values = [];
+    processRow = function(obj) {
+      keys.push(obj.key);
+      return values.push(obj.value);
+    };
+    _.each(response.rows, processRow);
+    stats = _.object(keys, values);
+    return stats;
   };
 
   return StatsCollection;
