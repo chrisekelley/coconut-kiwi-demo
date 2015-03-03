@@ -106,7 +106,7 @@ var by_StatsDesignDoc = createDesignDoc('by_Stats', function(doc) {
       emit('faveColor-white', 1)
     }
     if (doc.firstTimeDC == null)  {
-    emit('firstTimeDC-null', 1)
+      emit('firstTimeDC-null', 1)
     }
     if (doc.firstTimeDC == 'Yes')  {
       emit('firstTimeDC-yes', 1)
@@ -165,59 +165,88 @@ Backbone.sync.defaults.db.put(byClientIdDesignDoc).then(function (doc) {
     // design doc created!
     console.log("by_clientId created")
     Backbone.sync.defaults.db.query('by_clientId', {stale: 'update_after'})
-//    Backbone.sync.defaults.db.viewCleanup()
+    Backbone.sync.defaults.db.viewCleanup()
 }).catch(function (err) {
     if (err.name === 'conflict') {
         console.log("by_clientId exists.")
     }
 });
 
+
+//Backbone.sync.defaults.db.get('_design/by_serviceUuid', function(err, doc) {
+//  Backbone.sync.defaults.db.remove(doc, function(err, response) { });
+//  console.log("doc deleted: " + err);
+//});
+
 Backbone.sync.defaults.db.put(byServiceUuidDesignDoc).then(function (doc) {
     // design doc created!
     console.log("by_serviceUuid created")
     Backbone.sync.defaults.db.query('by_serviceUuid', {stale: 'update_after'})
-//    Backbone.sync.defaults.db.viewCleanup()
+    //Backbone.sync.defaults.db.viewCleanup()
 }).catch(function (err) {
     if (err.name === 'conflict') {
         console.log("by_serviceUuid exists.")
     }
 });
 
+//Backbone.sync.defaults.db.get('_design/by_AdminRegistration', function(err, doc) {
+//  Backbone.sync.defaults.db.remove(doc, function(err, response) { });
+//  console.log("doc deleted: " + err);
+//});
+
 Backbone.sync.defaults.db.put(by_AdminRegistrationDesignDoc).then(function (doc) {
     // design doc created!
     console.log("by_AdminRegistration created")
     Backbone.sync.defaults.db.query('by_AdminRegistration', {stale: 'update_after'})
-//    Backbone.sync.defaults.db.viewCleanup()
+    //Backbone.sync.defaults.db.viewCleanup()
 }).catch(function (err) {
     if (err.name === 'conflict') {
         console.log("by_AdminRegistration exists.")
     }
 });
 
+//Backbone.sync.defaults.db.get('_design/by_DocsDate', function(err, doc) {
+//  Backbone.sync.defaults.db.remove(doc, function(err, response) { });
+//  console.log("doc deleted: " + err);
+//});
+
 Backbone.sync.defaults.db.put(by_DocsDateDesignDoc).then(function (doc) {
     // design doc created!
     console.log("by_DocsDate created")
     Backbone.sync.defaults.db.query('by_DocsDate', {stale: 'update_after'})
+    //Backbone.sync.defaults.db.viewCleanup()
 }).catch(function (err) {
     if (err.name === 'conflict') {
         console.log("by_DocsDate exists.")
     }
 });
 
+//Backbone.sync.defaults.db.get('_design/by_AdminDate', function(err, doc) {
+//  Backbone.sync.defaults.db.remove(doc, function(err, response) { });
+//  console.log("doc deleted: " + err);
+//});
+
 Backbone.sync.defaults.db.put(by_AdminDateDesignDoc).then(function (doc) {
     // design doc created!
     console.log("by_AdminDate created")
     Backbone.sync.defaults.db.query('by_AdminDate', {stale: 'update_after'})
+    //Backbone.sync.defaults.db.viewCleanup()
 }).catch(function (err) {
     if (err.name === 'conflict') {
         console.log("by_AdminDate exists.")
     }
 });
 
+//Backbone.sync.defaults.db.get('_design/by_Stats', function(err, doc) {
+//  Backbone.sync.defaults.db.remove(doc, function(err, response) { });
+//  console.log("doc deleted: " + err);
+//});
+
 Backbone.sync.defaults.db.put(by_StatsDesignDoc).then(function (doc) {
     // design doc created!
     console.log("by_Stats created")
     Backbone.sync.defaults.db.query('by_Stats', {stale: 'update_after'})
+    //Backbone.sync.defaults.db.viewCleanup()
 }).catch(function (err) {
     if (err.name === 'conflict') {
         console.log("by_Stats exists.")
@@ -251,3 +280,5 @@ Handlebars.registerHelper('filterAdmin', function(items, options) {
 
     return out + "</ul>";
 });
+
+

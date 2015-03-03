@@ -324,7 +324,7 @@ Sync = (function(_super) {
       options = {};
     }
     filter = function(doc) {
-      if (doc._id !== "_design/by_clientId" && doc._id !== "_design/by_serviceUuid" && doc._id !== "SyncLog" && doc._id !== "coconut.config" && doc._id !== "coconut.config.local" && doc._id !== "version" && doc.noClientPush !== "true") {
+      if (doc._id !== "_design/by_clientId" && doc._id !== "_design/by_serviceUuid" && doc._id !== "_design/by_AdminRegistration" && doc._id !== "_design/by_DocsDate" && doc._id !== "_design/by_AdminDate" && doc._id !== "_design/by_Stats" && doc._id !== "SyncLog" && doc._id !== "coconut.config" && doc._id !== "coconut.config.local" && doc._id !== "version" && doc.noClientPush !== "true") {
         return doc;
       }
     };
