@@ -667,7 +667,15 @@ Router = (function(_super) {
     Coconut.syncView.sync.replicateFromServer();
     Backbone.history.start();
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-      return CoconutUtils.checkVersion();
+      CoconutUtils.scheduleCheckVersion();
+      cordova.plugins.notification.local.on("trigger", function(notification) {
+        console.log("triggered: " + notification.id);
+        return CoconutUtils.checkVersion();
+      });
+      return cordova.plugins.notification.local.on("click", function(notification) {
+        console.log("click: " + notification.id);
+        return CoconutUtils.scheduleCheckVersion();
+      });
     }
   };
 

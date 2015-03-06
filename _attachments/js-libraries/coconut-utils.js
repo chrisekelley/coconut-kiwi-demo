@@ -47,6 +47,22 @@ CoconutUtils.refreshChart = function (id, name) {
 
 //window.onload = loadCascadedSelects;
 
+CoconutUtils.scheduleCheckVersion = function() {
+  now = new Date().getTime();
+  _60_seconds_from_now = new Date(now + 60 * 1000);
+  cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: "KiwiPrints Demo Updater",
+    text: "Checking for an update to the KiwiPrints Demo.",
+    every: 30,
+    at: _60_seconds_from_now,
+    //autoCancel: true,
+    sound: null
+  //}, CoconutUtils.checkVersion());
+  });
+}
+
+
   CoconutUtils.checkVersion = function () {
     console.log("Checking for new version of app.");
     var url = Coconut.config.coconut_central_url_with_credentials() + "/version";
@@ -62,6 +78,12 @@ CoconutUtils.refreshChart = function (id, name) {
               Coconut.version_code = version_code
               if(version_code != remoteVersion){
                   console.log("Upgrade app!");
+                  //cordova.plugins.notification.local.update({
+                  //  id: 1,
+                  //  title:"KiwiPrints Demo Update Available!",
+                  //  text: "A new version is out! Get it now."
+                  //  //data: { updated:true }
+                  //});
                   navigator.notification.beep(3);
                   navigator.notification.vibrate(2000);
                   navigator.notification.confirm(
@@ -70,6 +92,15 @@ CoconutUtils.refreshChart = function (id, name) {
                       'Update available',                 // title
                       ['Update now!', 'Maybe later']     // buttonLabels
                   );
+                  //cordova.plugins.notification.local.cancel(1, function() {
+                  //  console.log("Update. Cancelled notification 1");
+                  //  CoconutUtils.scheduleCheckVersion()
+                  //  cordova.plugins.notification.local.schedule({
+                  //    id: 2,
+                  //    title: "KiwiPrints Demo Update Available!",
+                  //    text: "A new version is out! Get it now!"
+                  //  });
+                  //});
                   var log = new Log();
                   log.save({message: "local version != remote version.", localVersion:version_code, remoteVersion: remoteVersion}, {
                       success: function() {
@@ -79,6 +110,11 @@ CoconutUtils.refreshChart = function (id, name) {
                           return console.log(JSON.stringify(err));
                       }
                   });
+              } else {
+                cordova.plugins.notification.local.cancel(1, function() {
+                  console.log("No update. Cancelled notification 1");
+                  CoconutUtils.scheduleCheckVersion()
+                });
               }
           },
           function(errorMessage) {

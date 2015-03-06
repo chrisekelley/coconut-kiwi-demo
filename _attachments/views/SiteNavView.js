@@ -9,10 +9,8 @@ SiteNavView = Backbone.Marionette.ItemView.extend({
   },
   toggle: function() {
     var toggle;
-    console.log("Toggle");
     toggle = $(".navbar-toggle").is(":visible");
     if (toggle) {
-      console.log("toggle");
       return $(".navbar-collapse").collapse('hide');
     }
   }

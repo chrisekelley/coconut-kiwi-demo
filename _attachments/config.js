@@ -105,29 +105,20 @@ var by_StatsDesignDoc = createDesignDoc('by_Stats', function(doc) {
     if (doc.faveColor == 'white')  {
       emit('faveColor-white', 1)
     }
-    if (doc.firstTimeDC == null)  {
-      emit('firstTimeDC-null', 1)
+    if (doc.visitedNZbefore == null)  {
+      emit('visitedNZbefore-null', 1)
     }
-    if (doc.firstTimeDC == 'Yes')  {
-      emit('firstTimeDC-yes', 1)
+    if (doc.visitedNZbefore == 'Yes')  {
+      emit('visitedNZbefore-yes', 1)
     }
-    if (doc.firstTimeDC == 'No')  {
-      emit('firstTimeDC-no', 1)
+    if (doc.visitedNZbefore == 'No')  {
+      emit('visitedNZbefore-no', 1)
     }
-    if (doc.numberTimesCIES == '0')  {
-      emit('numberTimesCIES-0', 1)
+    if (doc.knowKiwiFromChina == 'Yes')  {
+      emit('knowKiwiFromChina-Yes', 1)
     }
-    if (doc.numberTimesCIES == '1')  {
-      emit('numberTimesCIES-1', 1)
-    }
-    if (doc.numberTimesCIES == '2')  {
-      emit('numberTimesCIES-2', 1)
-    }
-    if (doc.numberTimesCIES == '3')  {
-      emit('numberTimesCIES-3', 1)
-    }
-    if (doc.numberTimesCIES == 'more than 3')  {
-      emit('numberTimesCIES-more', 1)
+    if (doc.knowKiwiFromChina == 'No')  {
+      emit('knowKiwiFromChina-No', 1)
     }
     if (doc.coffeeOrTea == 'coffee')  {
       emit('coffeeOrTea-coffee', 1)

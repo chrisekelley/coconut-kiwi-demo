@@ -349,33 +349,21 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers['faveColor-white']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0['faveColor-white']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</td></tr>\n    </table>\n    <h2>Is this your first time in DC?</h2>\n    <table id=\"stats\">\n        <tr><td>Yes:</td><td>";
-  if (helper = helpers['firstTimeDC-yes']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['firstTimeDC-yes']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+    + "</td></tr>\n    </table>\n    <h2>Have you visited New Zealand before?</h2>\n    <table id=\"stats\">\n        <tr><td>Yes:</td><td>";
+  if (helper = helpers['visitedNZbefore-yes']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0['visitedNZbefore-yes']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</td></tr>\n        <tr><td>No:</td><td>";
-  if (helper = helpers['firstTimeDC-no']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['firstTimeDC-no']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if (helper = helpers['visitedNZbefore-no']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0['visitedNZbefore-no']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</td></tr>\n    </table>\n    <h2>How many times have you been to CIES before?</h2>\n    <table id=\"stats\">\n        <tr><td>0:</td><td>";
-  if (helper = helpers['numberTimesCIES-0']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['numberTimesCIES-0']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+    + "</td></tr>\n    </table>\n    <h2>Did you know kiwi fruit is originally from China?</h2>\n    <table id=\"stats\">\n        <tr><td>0:</td><td>";
+  if (helper = helpers['knowKiwiFromChina-Yes']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0['knowKiwiFromChina-Yes']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</td></tr>\n        <tr><td>1:</td><td>";
-  if (helper = helpers['numberTimesCIES-1']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['numberTimesCIES-1']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td></tr>\n        <tr><td>2:</td><td>";
-  if (helper = helpers['numberTimesCIES-2']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['numberTimesCIES-2']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td></tr>\n        <tr><td>3:</td><td>";
-  if (helper = helpers['numberTimesCIES-3']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['numberTimesCIES-3']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td></tr>\n        <tr><td>More than 3:</td><td>";
-  if (helper = helpers['numberTimesCIES-more']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0['numberTimesCIES-more']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if (helper = helpers['knowKiwiFromChina-No']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0['knowKiwiFromChina-No']); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</td></tr>\n    </table>\n    <h2>Do you prefer coffee or tea?</h2>\n    <table id=\"stats\">\n        <tr><td>Coffee:</td><td>";
   if (helper = helpers['coffeeOrTea-coffee']) { stack1 = helper.call(depth0, {hash:{},data:data}); }
